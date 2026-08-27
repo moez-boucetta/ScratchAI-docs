@@ -1,0 +1,105 @@
+---
+title: "Using the Scratch AI Chat Interface"
+sidebarTitle: "Chat Interface"
+description: "A complete guide to the Scratch AI chat panel — sending prompts, attaching images, focusing on sprites, undoing actions, and starting new chats."
+---
+
+The Scratch AI chat panel is your command center inside the Scratch editor. Once you install the extension, a **Scratch AI** tab appears in the editor's top toolbar alongside the standard **Code**, **Costumes**, and **Sounds** tabs. Click it to open the chat panel without leaving your project — everything happens right inside scratch.mit.edu.
+
+## The Chat Panel
+
+The panel is organized into three distinct zones:
+
+- **Chat history** (top area): your conversation scrolls here. Your messages appear on the right; AI responses and action results appear on the left. After each set of changes, Scratch AI summarises exactly what it did — e.g. *"renamed sprite to Player"*, *"added script on Player"*.
+- **Input area** (bottom): a text field where you type your prompt, a **`+`** (Add) button for attachments and sprite focus, and the **→ Build** button that executes your request.
+- **Toolbar** (top-right of the panel): a **⚙️ gear icon** that opens Settings (where you configure your AI provider and API key), and a **+ New chat** button that clears the conversation history.
+
+## Sending a Prompt
+
+<Steps>
+  <Step title="Type your request">
+    Click the text field at the bottom of the chat panel and describe what you want. Be as specific or as high-level as you like — for example:
+
+    ```
+    add a player that jumps
+    ```
+  </Step>
+  <Step title="Optionally focus a sprite or attach an image">
+    Use the **`+`** button (described below) to narrow the AI's attention to a specific sprite or to supply a visual reference.
+  </Step>
+  <Step title="Send the prompt">
+    Click the **→** arrow button or press **Enter**. Scratch AI shows a *"thinking…"* indicator while it plans the changes.
+  </Step>
+  <Step title="Review the results">
+    The AI response appears on the left side of the chat history, summarising each action it applied to your project. If anything looks wrong, you can undo immediately (see below) or ask for a correction in plain language.
+  </Step>
+</Steps>
+
+## Focusing on a Sprite
+
+By default, Scratch AI acts on whichever sprite is most relevant to your prompt. You can pin the request to an exact sprite instead:
+
+1. Click the **`+`** button in the input area and choose **Select a sprite**.
+2. A popup lists every sprite in your current project with its thumbnail. Click the one you want.
+3. The sprite thumbnail appears in the input strip, confirming the focus.
+4. Type your prompt — the AI will scope all changes to that sprite.
+5. Click the **×** on the thumbnail to remove the focus and return to free-range mode.
+
+<Note>
+  Focusing a sprite is especially useful when your project has multiple sprites with similar scripts and you need to edit only one of them precisely.
+</Note>
+
+## Attaching an Image
+
+Give the AI a visual reference to guide costume or backdrop creation:
+
+1. Click the **`+`** button and choose **Attach file**.
+2. Select an image from your computer (PNG, JPEG, WebP, and GIF are supported).
+3. A preview of the image appears in the input strip.
+4. Write your prompt — the AI uses the image as visual context when drawing or editing costumes and backdrops.
+5. Click the **×** on the image preview to remove it before sending if you change your mind.
+
+This is particularly helpful when you want a costume to match a specific style, character design, or colour palette you already have in mind.
+
+## The Build Button
+
+Clicking **Build** (or pressing **Enter**) sends your prompt to the AI and triggers the full action pipeline:
+
+1. The AI reads your conversation history, the attached image (if any), and the focused sprite (if any).
+2. It plans a sequence of actions — `addSprite`, `addScript`, `addSvgCostume`, and so on.
+3. Those actions are applied live to your Scratch project without you needing to click anything else.
+4. The chat history updates with a human-readable summary of every change made.
+
+You can continue the conversation immediately after — each follow-up prompt builds on the current state of your project.
+
+## Undoing Actions
+
+If the AI makes a mistake or produces something you didn't expect, you can roll back the last batch of changes instantly. The `undo` command reverts every action from the most recent response in a single step.
+
+To trigger an undo, type:
+
+```
+undo
+```
+
+or describe what you'd like reverted:
+
+```
+undo the last changes
+```
+
+<Warning>
+  Undo reverts only the most recent set of AI actions. If you have applied several rounds of changes, you will need to undo each round separately. Manual edits you make directly in the Scratch editor cannot be undone through Scratch AI.
+</Warning>
+
+## Starting a New Chat
+
+Click **+ New chat** (top-right of the panel) to wipe the conversation history and start a fresh session. This is useful when you switch to a completely different task or want to give the AI a clean context.
+
+<Note>
+  Starting a new chat clears only the **conversation history** — it does **not** undo any changes already applied to your project. Your sprites, scripts, and costumes remain exactly as they are.
+</Note>
+
+<Tip>
+  You can paste error messages or describe bugs directly into the chat — Scratch AI will try to diagnose and fix the problem. For example: *"My player falls through the floor — fix the collision detection."*
+</Tip>

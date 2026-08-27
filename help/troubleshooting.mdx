@@ -1,0 +1,130 @@
+---
+title: "Troubleshoot Scratch AI: Fix Common Issues"
+sidebarTitle: "Troubleshooting"
+description: "Step-by-step fixes for the most common Scratch AI problems — missing tab, API errors, empty responses, rate limits, and model not found errors."
+---
+
+If Scratch AI isn't working as expected, this page covers the most common issues and how to fix them. For bugs not covered here, please open an issue on GitHub at [https://github.com/moez-boucetta/ScratchAI/issues](https://github.com/moez-boucetta/ScratchAI/issues).
+
+---
+
+## The Scratch AI Tab Doesn't Appear
+
+The extension only injects itself on Scratch project editor pages. If the Scratch AI panel is missing, the most likely cause is that the extension is either not active on the current URL or needs to be reloaded.
+
+<Steps>
+  <Step title="Check the URL">
+    Make sure your browser tab is on a URL that matches `scratch.mit.edu/projects/<id>/editor`. The extension does **not** activate on the Scratch homepage, your profile page, or a project's public view page — you must be inside the editor itself.
+  </Step>
+  <Step title="Refresh the page">
+    Press **Ctrl+R** (Windows/Linux) or **Cmd+R** (macOS) to reload the tab. This re-triggers content script injection and is often all that's needed after installing or updating the extension.
+  </Step>
+  <Step title="Reload the extension">
+    Navigate to `chrome://extensions` in your browser's address bar. Find **Scratch AI** in the list and click the reload **↻** icon beneath it. Then return to your Scratch project and refresh the tab.
+  </Step>
+  <Step title="Verify Developer Mode and extension status">
+    On the `chrome://extensions` page, confirm that **Developer Mode** (top-right toggle) is turned on and that the Scratch AI extension toggle is enabled. If the extension shows an error badge, click **Details** to read the error message and resolve it before reloading.
+  </Step>
+</Steps>
+
+---
+
+## "No model selected. Pick one in Settings."
+
+You haven't chosen an AI model yet, so Scratch AI has nothing to send your prompt to.
+
+1. Click the **⚙️ Settings** icon in the Scratch AI panel.
+2. Open the model dropdown and select a model.
+3. Click **Save** to confirm your choice.
+
+<Tip>
+  If you're unsure which model to pick, start with **Gemini Flash** — it's fast and available on Google's free tier.
+</Tip>
+
+---
+
+## "API request timed out (120s)."
+
+The model took longer than 120 seconds to respond. This usually means the selected model is under heavy load or is too large to respond quickly enough for interactive use.
+
+- **Switch to a faster model.** Gemini Flash and GPT-4o Mini are significantly faster than larger models like GPT-4o or Claude Opus.
+- **Check your internet connection.** A slow or unstable connection can cause the request to stall before it reaches the provider.
+- **Try again.** Temporary provider-side congestion clears on its own — resending the same prompt a moment later often succeeds.
+
+<Warning>
+  Very large prompts (for example, attaching multiple high-resolution images) increase response time. If timeouts are frequent, try simplifying your prompt or removing attachments.
+</Warning>
+
+---
+
+## "Rate limited (429)."
+
+You've sent too many requests in a short period and the provider has temporarily blocked further calls from your API key. Free-tier keys have strict per-minute and per-day quotas.
+
+- **Wait 1–2 minutes** and try your prompt again. Most rate limits reset within a minute.
+- **Switch to a different model or provider.** Each model has its own quota bucket, so a different model on the same provider — or an entirely different provider — may still accept requests.
+- **Upgrade to a paid API plan** if you hit free-tier limits regularly.
+- **Use OpenRouter** to route requests across multiple providers automatically, spreading the load and reducing how often any single provider's limit is reached.
+
+---
+
+## "Model not found (404)."
+
+The model ID Scratch AI sent to the API doesn't match any model the provider recognises. This error is most common with Google Gemini models when a model name is entered manually and doesn't match the exact identifier Google expects.
+
+- In **⚙️ Settings**, select a model from the dropdown rather than typing a name manually. Valid choices include **"Gemini 1.5 Flash"** and **"Gemini 2.0 Flash"**.
+- If you are using a custom model name via the OpenRouter or Google provider, verify the exact model ID in [Google AI Studio](https://aistudio.google.com) or the [OpenRouter model list](https://openrouter.ai/models) — even a small typo will trigger this error.
+
+---
+
+## "The model returned an empty response."
+
+The AI accepted your request and ran, but produced no output. This is usually a temporary glitch on the provider's side.
+
+- **Resend the prompt.** Click **Build** again with the same prompt — the model will often succeed on the second attempt.
+- **Rephrase your prompt.** Be more specific about what you want (e.g. "Add a cat sprite that moves left when the left arrow key is pressed" rather than "Make it move").
+- **Switch to a more capable model.** Very lightweight models occasionally return empty outputs on complex requests. Try GPT-4o or Claude Sonnet for more reliable results.
+
+---
+
+## "Enter your OpenRouter model ID in Settings."
+
+You selected **OpenRouter** as your provider but left the custom model field empty. OpenRouter requires you to specify which underlying model to use.
+
+- Open **⚙️ Settings** and locate the **Model ID** field.
+- Enter your OpenRouter model ID in the format `provider/model-name`, for example:
+  - `anthropic/claude-sonnet-4`
+  - `openai/gpt-4o`
+  - `google/gemini-flash-1.5`
+- Click **Save**. You can browse the full list of available model IDs at [openrouter.ai/models](https://openrouter.ai/models).
+
+---
+
+## Scratch AI Made Unexpected Changes
+
+If the AI modified something you didn't intend, you have several recovery options:
+
+1. Use the **Undo** button in the Scratch AI chat panel to revert the most recent set of AI actions.
+2. Press **Ctrl+Z** (Windows/Linux) or **Cmd+Z** (macOS) in the Scratch editor to step back through individual block-level changes.
+3. Click **New Chat** to start a fresh session, then describe the current state of your project carefully so the AI has accurate context before you issue your next prompt.
+
+<Info>
+  Being specific in your prompts — naming the sprite, describing the exact behaviour, and stating what should *not* change — reduces the chance of unintended edits.
+</Info>
+
+---
+
+## API Key Invalid / Authentication Error
+
+An authentication error means the provider rejected your API key. This can happen for several reasons:
+
+- **Typo or extra whitespace.** Open **⚙️ Settings**, delete the key, and paste it again directly from your provider's dashboard. Make sure there are no leading or trailing spaces.
+- **Wrong key for the selected provider.** An OpenAI key won't work with the Google Gemini provider, and vice versa. Double-check that the key you've pasted matches the provider currently selected in the dropdown.
+- **Expired or revoked key.** Log in to your provider's dashboard and check whether the key is still active. If it has been revoked or has expired, generate a new key and save it in Scratch AI Settings.
+- **Billing issue.** Some providers deactivate keys when a free-tier quota is exhausted or a payment method is missing. Check your account status in the provider's dashboard.
+
+---
+
+<Note>
+  For bugs or feature requests not covered here, open an issue at [https://github.com/moez-boucetta/ScratchAI/issues](https://github.com/moez-boucetta/ScratchAI/issues). Include your browser version, the model you were using, and the exact error message to help the maintainers reproduce and fix the problem quickly.
+</Note>

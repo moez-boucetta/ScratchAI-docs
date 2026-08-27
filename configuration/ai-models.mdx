@@ -1,0 +1,80 @@
+---
+title: "Supported AI Models and Providers for Scratch AI"
+sidebarTitle: "AI Models"
+description: "Scratch AI works with OpenAI, Anthropic, Google Gemini, xAI, DeepSeek, Qwen, Moonshot, Meta, Z.AI, and OpenRouter — choose the right model for your needs."
+---
+
+Scratch AI supports a wide range of AI models from leading providers. You choose which model to use in the [Settings panel](/configuration/settings) — each provider requires its own API key. Several providers offer free tiers, so you can start building Scratch projects with AI at no cost.
+
+## Choosing the Right Model
+
+Not all models are equal for every task. Here are some practical recommendations:
+
+- **Just getting started?** Use **Google Gemini 3.7 Flash**. It is fast, free to try via Google AI Studio, and handles most Scratch tasks well.
+- **Building a complex project or full game?** Reach for **GPT-5.6**, **Claude Sonnet 5**, or **Gemini 2.5 Pro** — they reason more carefully over longer instructions.
+- **On a budget?** **DeepSeek V4 Flash** offers strong performance at very low cost per request.
+- **Want to try many models without managing multiple keys?** Use **OpenRouter** — one API key unlocks hundreds of models from different providers.
+
+## Supported Providers
+
+<CardGroup cols={2}>
+  <Card title="Google Gemini" icon="google" href="https://aistudio.google.com/apikey">
+    **Models:** Gemini 3.7 Flash, Gemini 3.5 Flash, Gemini 3.5 Flash Lite, Gemini 3 Flash Preview, Gemini 2.5 Pro, Gemma 4 31B, Gemma 4 26B A4B.
+
+    Free tier available via Google AI Studio. A great first choice for beginners. Get your API key at [aistudio.google.com/apikey](https://aistudio.google.com/apikey).
+  </Card>
+  <Card title="OpenAI" icon="robot" href="https://platform.openai.com/api-keys">
+    **Models:** GPT-5.6, GPT-5.6 Cyber.
+
+    The most widely used AI platform. Well-suited for complex Scratch projects and game logic. Get your API key at [platform.openai.com/api-keys](https://platform.openai.com/api-keys).
+  </Card>
+  <Card title="Anthropic Claude" icon="robot" href="https://console.anthropic.com/settings/keys">
+    **Models:** Claude Opus 5, Claude Sonnet 5.
+
+    Excellent at following detailed instructions and producing clean, well-structured code. Get your API key at [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys).
+  </Card>
+  <Card title="xAI Grok" icon="robot" href="https://console.x.ai">
+    **Models:** Grok 4.6.
+
+    xAI's flagship model. Get your API key at [console.x.ai](https://console.x.ai).
+  </Card>
+  <Card title="DeepSeek" icon="robot" href="https://platform.deepseek.com">
+    **Models:** DeepSeek V4 Pro, DeepSeek V4 Flash.
+
+    Affordable and surprisingly capable — a solid budget-friendly option. Get your API key at [platform.deepseek.com](https://platform.deepseek.com).
+  </Card>
+  <Card title="OpenRouter" icon="circle-nodes" href="https://openrouter.ai/keys">
+    **Access hundreds of models with a single API key.** Select **Custom model…** in Settings, then enter a model ID (e.g. `anthropic/claude-sonnet-4`). Browse available models at [openrouter.ai/models](https://openrouter.ai/models) and get your key at [openrouter.ai/keys](https://openrouter.ai/keys).
+  </Card>
+  <Card title="Meta" icon="robot" href="#">
+    **Models:** Muse Spark 1.2, Muse Glimmer.
+
+    Meta's models accessed via the Llama API endpoint (`api.llama-api.com`). Also available through OpenRouter with no separate API key needed.
+  </Card>
+  <Card title="Alibaba Qwen, Moonshot AI, Z.AI" icon="robot" href="#">
+    **Qwen (Alibaba):** Qwen 3.8 Max, Qwen 3.8 — accessed via DashScope's international endpoint.
+
+    **Moonshot AI:** Kimi K3 — accessed via `api.moonshot.cn`.
+
+    **Z.AI:** GLM-5.3, GLM-5.2, GLM-5.2 Turbo — accessed via `api.z.ai`.
+  </Card>
+</CardGroup>
+
+## Free Options
+
+<Tip>
+  The easiest way to start for free is with **Google Gemini**. Visit [aistudio.google.com/apikey](https://aistudio.google.com/apikey) to generate a free API key in under a minute, then open Scratch AI's Settings and select **Gemini 3.7 Flash**. The free tier is generous enough for regular Scratch use with no credit card required.
+</Tip>
+
+## Model Performance Tips
+
+Keep these points in mind as you work with Scratch AI:
+
+- **For simple sprite and script tasks** — any fast model works well. Try Gemini 3.7 Flash, Gemini 3.5 Flash Lite, or DeepSeek V4 Flash for quick turnaround.
+- **For generating full projects or complex game logic** — use a more capable model such as GPT-5.6, Claude Sonnet 5, or Gemini 2.5 Pro. These handle multi-step instructions and longer context more reliably.
+- **If you receive empty or strange responses** — try switching to a different model, or open Settings to confirm your API key is correct and hasn't expired.
+- **If you see a 429 rate-limit error** — you have exhausted your free-tier quota for that provider. Wait a minute and try again, upgrade to a paid plan, or switch to a different provider with remaining quota.
+
+<Info>
+  Scratch AI detects the correct API endpoint automatically based on the model you select — you never need to enter a URL manually. For OpenRouter, it always routes through `openrouter.ai/api/v1/chat/completions` regardless of which model ID you enter.
+</Info>

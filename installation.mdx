@@ -1,0 +1,52 @@
+---
+title: "Install Scratch AI on Chrome in Under 2 Minutes"
+sidebarTitle: "Installation"
+description: "Download the Scratch AI Chrome extension from GitHub, load it unpacked, and open it on any Scratch project in just a few steps."
+---
+
+Scratch AI is distributed as an unpacked Chrome extension — you download the pre-built release from GitHub, point Chrome at the folder, and you're done. There is no Chrome Web Store listing to wait for; the whole process takes under two minutes and requires no command line tools.
+
+<Info>
+  **Before you begin, make sure you have:**
+  - Google Chrome (or any Chromium-based browser such as Edge or Brave) installed on your computer
+  - A Scratch account at [scratch.mit.edu](https://scratch.mit.edu) — you need to be inside a project editor for the extension to activate
+  - An API key from your chosen AI provider (OpenAI, Google AI Studio, Anthropic, etc.) — you will add this after installation
+</Info>
+
+## Installation Steps
+
+<Steps>
+  <Step title="Download the extension">
+    Go to the [Scratch AI Releases page](https://github.com/moez-boucetta/ScratchAI/releases) on GitHub. Find the latest release and download the **`dist.zip`** asset attached to it. Once the download finishes, unzip the file — you will get a folder called `dist/` containing the built extension files.
+  </Step>
+  <Step title="Open Chrome Extensions">
+    In Chrome's address bar, type `chrome://extensions` and press **Enter**. This opens the Extensions management page where you can add, remove, and inspect your installed extensions.
+  </Step>
+  <Step title="Enable Developer Mode">
+    In the top-right corner of the Extensions page, find the **Developer mode** toggle and switch it **on**. This unlocks the ability to load extensions directly from a local folder, which is required for unpacked extensions like Scratch AI.
+  </Step>
+  <Step title="Load the unpacked extension">
+    Click the **Load unpacked** button that appears in the top-left after enabling Developer mode. In the file picker that opens, navigate to and select the `dist/` folder you unzipped in Step 1. Click **Select Folder** (or **Open** on macOS).
+  </Step>
+  <Step title="Verify installation">
+    Chrome loads the extension and it appears in your Extensions list as **Scratch AI**. You should also see the Scratch AI robot icon in your Chrome toolbar (you may need to click the puzzle-piece Extensions icon to pin it). If you see a red error badge instead, double-check that you selected the `dist/` folder itself and not a parent or nested folder.
+  </Step>
+  <Step title="Open a Scratch project">
+    Log in to [scratch.mit.edu](https://scratch.mit.edu) and open any project in the editor — the URL will look like `scratch.mit.edu/projects/123456789/editor`. Inside the editor you will see the **Scratch AI** tab in the top toolbar, sitting alongside the standard **Code**, **Costumes**, and **Sounds** tabs. Click it to open the AI chat panel.
+  </Step>
+</Steps>
+
+<Warning>
+  Scratch AI only activates on `scratch.mit.edu/projects/*` URLs. The tab and chat panel will **not** appear on the Scratch homepage, community pages, or any other website — this is an intentional security boundary defined in the extension's permissions.
+</Warning>
+
+## Troubleshooting
+
+If the **Scratch AI** tab does not appear after opening a project editor, try the following:
+
+- **Refresh the page** — the content script sometimes needs a fresh page load after the extension is first installed.
+- **Reload the extension** — go back to `chrome://extensions`, find Scratch AI, and click the refresh icon beneath its card, then return to your Scratch project.
+- **Check the URL** — make sure the URL contains `/projects/` (e.g. `scratch.mit.edu/projects/123456789`). The extension does not inject into the editor when accessed via `scratch.mit.edu/editor` without a project ID.
+- **Confirm Developer mode is still on** — Chrome occasionally disables Developer mode extensions after a restart and prompts you to confirm; click **Keep** if asked.
+
+Once you can see the Scratch AI tab, head over to the [Quick Start guide](/quickstart) to configure your API key and send your first prompt.

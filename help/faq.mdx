@@ -1,0 +1,59 @@
+---
+title: "Scratch AI Frequently Asked Questions"
+sidebarTitle: "FAQ"
+description: "Answers to common questions about Scratch AI — installation, AI models, API keys, privacy, and how the extension works with Scratch projects."
+---
+
+This page answers the most common questions about Scratch AI. If you can't find your answer here, open an issue on [GitHub](https://github.com/moez-boucetta/ScratchAI/issues) and the community will be happy to help.
+
+<AccordionGroup>
+
+  <Accordion title="Is Scratch AI free?">
+    Yes. The Scratch AI extension is completely free and open-source under the MIT license — you can inspect, fork, and modify the code at any time. The only potential cost comes from the AI provider you choose to use. Many providers, including Google, offer a free tier that is more than enough for casual use. If you want higher limits or more powerful models, paid plans are available directly from each provider.
+  </Accordion>
+
+  <Accordion title="Does Scratch AI store my data or API key?">
+    No. Your API key is stored exclusively in your browser's local extension storage — it never leaves your device except when authenticating directly with your chosen AI provider. Scratch AI does not operate any backend server of its own, so your key and your conversation history are never sent to or stored by the Scratch AI project. The only external service that ever receives your data is the AI provider you selected in Settings.
+  </Accordion>
+
+  <Accordion title="What is an API key and where do I get one?">
+    An API key is a credential issued by an AI provider — such as Google, OpenAI, or Anthropic — that grants your requests access to their AI models. You generate a key in your provider's developer dashboard and paste it into Scratch AI's Settings panel. For step-by-step instructions on obtaining and saving your key, see the [Settings configuration guide](/configuration/settings).
+  </Accordion>
+
+  <Accordion title="Which AI model should I use?">
+    If you're just getting started, **Google Gemini Flash** is a great first choice — it's fast, capable, and available on Google's free tier. For more complex or multi-step projects, **GPT-4o** (OpenAI) or **Claude Sonnet** (Anthropic) tend to produce more polished results. You can switch models at any time in Settings without losing your current project. For a full comparison of supported providers and models, see the [AI models guide](/configuration/ai-models).
+  </Accordion>
+
+  <Accordion title="Does Scratch AI work on Firefox or Safari?">
+    Not currently. Scratch AI is a Chrome extension and works only in **Chrome and Chromium-based browsers**, including Microsoft Edge, Brave, and Arc. Firefox and Safari use a different extension system and are not supported at this time.
+  </Accordion>
+
+  <Accordion title="Will Scratch AI modify projects I didn't ask it to?">
+    No. Scratch AI is entirely prompt-driven — it only makes changes to your project when you explicitly type a prompt and click **Build**. It never runs in the background or modifies your project automatically.
+  </Accordion>
+
+  <Accordion title="Can I undo what Scratch AI did?">
+    Yes. You can undo the most recent set of AI-driven changes directly from the Scratch AI chat panel using the undo button. If you need to revert further, use Scratch's built-in undo shortcut (**Ctrl+Z** on Windows/Linux, **Cmd+Z** on macOS) in the editor. For a full reset, start a **New Chat** and rebuild from a clean description.
+  </Accordion>
+
+  <Accordion title="Can I use Scratch AI on any Scratch project?">
+    Yes. Scratch AI activates on any project open in the Scratch editor at a `scratch.mit.edu/projects/…` URL — including your own projects, remixes of other projects, or any project you've opened in the editor. You do not need to own the project for Scratch AI to assist you while you're editing it locally.
+  </Accordion>
+
+  <Accordion title="Does Scratch AI upload my project?">
+    No. All of Scratch AI's actions happen entirely inside your browser. The only data sent to an external service is your **text prompt** (and any images you optionally attach) to your chosen AI provider. Your Scratch project itself — its scripts, sprites, costumes, and sounds — stays on your device and is never uploaded by Scratch AI.
+  </Accordion>
+
+  <Accordion title="The Scratch AI tab doesn't appear — why?">
+    The extension only activates on URLs that match `scratch.mit.edu/projects/*`. Make sure you are inside the **project editor** (the URL should end with `/editor`), not just viewing the project's landing page. If the URL looks correct, try refreshing the tab. If the tab still doesn't appear, reload the extension from `chrome://extensions`. See the [Troubleshooting guide](/help/troubleshooting) for a full checklist.
+  </Accordion>
+
+  <Accordion title="Is Scratch AI official from the Scratch Team?">
+    No. Scratch AI is an independent, community-made extension created by [Abdelmoez Boucetta](https://github.com/moez-boucetta). It is not affiliated with, endorsed by, or supported by the Scratch Foundation or MIT. "Scratch" is a trademark of the Scratch Foundation.
+  </Accordion>
+
+  <Accordion title="Can I use Scratch AI offline?">
+    No. Scratch AI requires an active internet connection to send your prompt to the AI provider and receive a response. The extension itself loads locally from your browser, but the AI generation step always requires network access.
+  </Accordion>
+
+</AccordionGroup>

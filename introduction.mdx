@@ -1,0 +1,111 @@
+---
+title: "Scratch AI: AI Assistant for the Scratch Editor"
+sidebarTitle: "Introduction"
+description: "Scratch AI is a free Chrome extension that lets you build and edit Scratch projects using plain natural language — no coding required."
+---
+
+Scratch AI is a free, open-source Chrome extension that brings an AI chat assistant directly into the Scratch editor at [scratch.mit.edu](https://scratch.mit.edu). Whether you're a curious kid building your first game, an educator scaffolding a classroom project, or a hobbyist who wants to prototype animations fast, Scratch AI lets you describe what you want in plain language and watches it come to life — no manual block-dragging required.
+
+## What is Scratch AI?
+
+Scratch AI adds a dedicated chat panel inside the Scratch editor. Instead of hunting for the right blocks and snapping them together manually, you simply type what you want — "add a cat that chases the mouse" or "create a platformer with a score counter" — and Scratch AI translates your words into real actions on your live project. It hooks directly into the Scratch virtual machine running in your browser, so every change is immediate and interactive.
+
+The extension is completely free, fully open-source under the MIT license, and never sends your project data anywhere without your explicit API call to the AI provider you choose.
+
+## Key Features
+
+<CardGroup cols={2}>
+  <Card
+    title="Add & Delete Sprites"
+    icon="ghost"
+    href="/features/sprites-and-costumes"
+  >
+    Instantly add new sprites or remove existing ones by name, keeping your project organised with a single prompt.
+  </Card>
+  <Card
+    title="Edit Block Scripts"
+    icon="code"
+    href="/features/scripts-and-blocks"
+  >
+    Generate and modify movement, logic, clones, broadcasts, sensors, and custom procedures (My Blocks) directly in the editor.
+  </Card>
+  <Card
+    title="Draw Custom Costumes & Backdrops"
+    icon="paintbrush"
+    href="/features/sprites-and-costumes"
+  >
+    Scratch AI draws original SVG artwork for sprites, scenery, and UI elements — no external image editor needed.
+  </Card>
+  <Card
+    title="Generate Full Projects"
+    icon="wand-magic-sparkles"
+    href="/quickstart"
+  >
+    Describe a game, story, animation, or simulation in one prompt and get a complete, playable Scratch project in return.
+  </Card>
+  <Card
+    title="Green-flag Testing"
+    icon="flag"
+    href="/features/scripts-and-blocks"
+  >
+    Scratch AI green-flag tests the scripts it builds and reports back whether they run correctly before handing control to you.
+  </Card>
+  <Card
+    title="Export as .sb3"
+    icon="file-export"
+    href="/features/chat-interface"
+  >
+    Save your finished project as a standard `.sb3` file at any time, ready to upload or share on Scratch.
+  </Card>
+  <Card
+    title="Attach Images for Context"
+    icon="image"
+    href="/features/chat-interface"
+  >
+    Upload a screenshot or reference image to guide the AI — perfect for recreating a layout or matching a visual style.
+  </Card>
+  <Card
+    title="10+ AI Model Providers"
+    icon="robot"
+    href="/configuration/ai-models"
+  >
+    Connect to OpenAI, Anthropic, Google Gemini, and many more. Bring your own API key and pick the model that fits your budget.
+  </Card>
+</CardGroup>
+
+## Supported AI Providers
+
+Scratch AI works with your existing API key from any of the following providers:
+
+| Provider | Notable Models |
+|---|---|
+| **OpenAI** | GPT-4o, GPT-4o mini, o3-mini |
+| **Anthropic** | Claude 3.5 Sonnet, Claude 3 Haiku |
+| **Google** | Gemini 1.5 Pro, Gemini 1.5 Flash |
+| **xAI** | Grok-2, Grok-2 mini |
+| **DeepSeek** | DeepSeek-V3, DeepSeek-R1 |
+| **Alibaba (Qwen)** | Qwen2.5, Qwen-Turbo |
+| **Z.AI** | GLM-4 series |
+| **Moonshot** | Moonshot-v1 |
+| **Meta Llama** | Llama 3.3 70B (via OpenRouter) |
+| **OpenRouter** | Any model in the OpenRouter catalogue |
+
+You store your API key locally in your browser — it is never sent to any Scratch AI server.
+
+## How It Works
+
+When you open a Scratch project in the editor, Scratch AI injects a lightweight content script into the page that connects to the live Scratch virtual machine. An **AI chat tab** appears in the top toolbar alongside the standard Code, Costumes, and Sounds tabs.
+
+Here is the flow for every prompt you send:
+
+1. You type a natural-language instruction in the chat input.
+2. Scratch AI sends your prompt (plus relevant project context) to the AI provider you configured.
+3. The model replies with a structured list of actions encoded in a hidden JSON block.
+4. The extension silently executes those actions against the running Scratch VM — adding sprites, writing scripts, drawing costumes, setting variables, and more.
+5. Your project updates in real time, right in front of you.
+
+You stay in control at every step: you can keep chatting to refine the result, undo individual actions, or take over the blocks manually at any time.
+
+<Note>
+  Scratch AI is released under the **MIT license** and is completely free to use. Your API key is stored only in your local browser storage and is never transmitted to any Scratch AI server — it goes directly from your browser to the AI provider you choose.
+</Note>

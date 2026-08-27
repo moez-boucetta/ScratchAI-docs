@@ -1,0 +1,116 @@
+---
+title: "Manage Variables and Lists with Scratch AI"
+sidebarTitle: "Variables & Lists"
+description: "Create, set, delete, and manage Scratch variables and lists across your project using simple natural-language prompts in Scratch AI."
+---
+
+Scratch AI can create and manage variables and lists across your entire project or scoped to a specific sprite — all from the chat panel. Whether you need a simple score counter or a complex inventory system, you can describe it in plain language and Scratch AI handles the setup automatically.
+
+## Variables
+
+Variables store single values — numbers, text, or booleans — that your scripts can read and update as your project runs.
+
+### Creating a Variable
+
+```
+create a variable called score
+```
+```
+create a variable named lives with value 3
+```
+
+You can create global variables (available to all sprites) or sprite-local variables by focusing a specific sprite before sending your prompt.
+
+### Setting a Variable's Value
+
+```
+set the score variable to 0
+```
+```
+set lives to 5
+```
+
+### Deleting a Variable
+
+```
+delete the score variable
+```
+
+### Showing and Hiding Variables
+
+By default, Scratch displays a variable monitor on the stage. You can show or hide it at any time:
+
+```
+show the score variable
+```
+```
+hide the lives variable
+```
+
+## Lists
+
+Lists store ordered collections of items — perfect for inventories, leaderboards, question banks, and more.
+
+### Creating a List
+
+```
+create a list called inventory
+```
+
+### Adding Items
+
+```
+add "sword" to the inventory list
+```
+```
+add "shield" to the inventory list
+```
+
+### Deleting a List
+
+```
+delete the inventory list
+```
+
+<Note>
+  Deleting a list removes all of its items and any variable monitor displayed on the stage. Scripts that reference the list will still exist but will throw an error at runtime — ask Scratch AI to clean up those references as a follow-up prompt.
+</Note>
+
+## Using Variables in Scripts
+
+<Tip>
+  When you ask Scratch AI to build game mechanics, it automatically creates and manages any variables needed. For example, asking for a score system will create a `score` variable, initialise it to `0` on the green flag, and wire the increment logic into the correct collision or event script — all in one step.
+</Tip>
+
+## Example Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Score Tracking" icon="star" href="/features/variables-and-lists">
+    Add a score counter that increments when the player touches a collectible:
+
+    ```
+    add a score that increases by 1 when Player touches Star
+    ```
+  </Card>
+  <Card title="Lives System" icon="heart" href="/features/variables-and-lists">
+    Track player lives and trigger a game-over condition:
+
+    ```
+    add 3 lives that decrease when Player touches Enemy
+    ```
+  </Card>
+  <Card title="Countdown Timer" icon="clock" href="/features/variables-and-lists">
+    Add a ticking countdown that ends the game at zero:
+
+    ```
+    add a countdown timer from 60 seconds
+    ```
+  </Card>
+  <Card title="High Score" icon="trophy" href="/features/variables-and-lists">
+    Persist the best score across rounds in a session:
+
+    ```
+    create a high score variable that saves the best score
+    ```
+  </Card>
+</CardGroup>

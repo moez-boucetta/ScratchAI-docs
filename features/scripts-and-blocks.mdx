@@ -1,0 +1,108 @@
+---
+title: "Edit Block Scripts with Scratch AI"
+sidebarTitle: "Scripts & Blocks"
+description: "Use Scratch AI to add, replace, or delete Scratch block scripts on any sprite using natural language — from simple movement to complex game logic."
+---
+
+Scratch AI can build, replace, and delete block scripts on any sprite — all from a plain-English description. Whether you need basic arrow-key movement or a full game loop with broadcasts, clones, collision detection, and custom procedures, you can describe it in the chat and Scratch AI assembles the correct block structure for you.
+
+## Adding Scripts
+
+Use a prompt describing the behaviour you want, and Scratch AI creates a complete script using the `addScript` action:
+
+```
+add a script so Player moves right when I press the right arrow key
+```
+```
+add player controller to Sprite1
+```
+```
+make the cat spin forever when the green flag is clicked
+```
+```
+add a jumping mechanic to Player that activates on space bar press
+```
+
+Scratch AI works out the hat block (event trigger), the logic blocks, and any variables it needs to wire up the behaviour correctly. You don't need to name specific opcodes — just describe the desired behaviour.
+
+## Replacing Scripts
+
+Swap out an existing script with a new implementation without losing the sprite or its other scripts:
+
+```
+replace the movement script on Player with one that uses WASD keys
+```
+
+Scratch AI identifies the matching script by its behaviour and replaces it in place.
+
+## Deleting Scripts
+
+Remove scripts you no longer need:
+
+```
+delete all scripts on Enemy
+```
+```
+delete script 2 on Player
+```
+
+Use `deleteAllScripts` when you want to wipe a sprite's entire script list and start over from scratch.
+
+## Supported Block Categories
+
+Scratch AI supports the full range of Scratch blocks across every built-in and extension category:
+
+- **Events**: When flag clicked, key pressed, backdrop switches, broadcasts received, when greater than
+- **Motion**: Move steps, go to x/y, glide, point in direction, point towards, change x/y, bounce on edge, set rotation style
+- **Looks**: Say/think (timed and untimed), switch costume/backdrop, next costume/backdrop, show/hide, change and set size, graphic effects, layer ordering
+- **Sound**: Play sound, play until done, stop all sounds, set/change volume and audio effects
+- **Control**: Wait, repeat, forever, if/else, wait until, repeat until, stop, create clone, start as clone, delete clone
+- **Sensing**: Touching object/colour, colour touching colour, distance to, ask and wait, key pressed, mouse position and button, timer, reset timer, property of sprite, current date/time
+- **Operators**: Addition, subtraction, multiplication, division, random, greater/less than, equals, and/or/not, join, letter of, length, contains, mod, round, math functions
+- **Data**: Set/change variables, show/hide variables, add to list, delete from list, insert at list, replace item, item of list, item number, list length, list contains item, show/hide list
+- **Pen**: Pen down/up, stamp, clear, set pen colour, change/set pen size, set hue/saturation/brightness/transparency
+- **Music**: Play drum for beats, rest for beats, play note for beats, set instrument, set/change tempo
+- **My Blocks (Custom Procedures)**: Define custom blocks with arguments, call custom blocks
+- **Text to Speech**: Speak text, speak and wait, set voice
+- **Extensions**: Translate text, Video Sensing (motion detection), Face Sensing (face position and tilt)
+
+## Green-Flag Testing
+
+After Scratch AI builds or modifies scripts, it automatically runs a green-flag test and reports the results in the chat. You'll see feedback such as:
+
+```
+✓ done — Flag test on "Player": 1 thread(s) started, position 0,0 → 0,0 — WORKING ✓ (key-controlled)
+```
+
+The test report tells you:
+
+- How many script threads started when the flag was clicked
+- Whether the sprite moved or changed position
+- Whether any costumes or variables changed
+- Whether the script is key-controlled (meaning it responds to key input rather than triggering immediately)
+- Any runtime errors encountered
+
+If a test shows a script is not working as expected, you can ask Scratch AI to diagnose and fix it in the very next message.
+
+## Custom Blocks (My Blocks)
+
+Define reusable procedures to keep your scripts clean and modular:
+
+```
+define a custom block called jump with a height argument
+```
+```
+create a custom block named spawnEnemy that takes a speed argument
+```
+
+Scratch AI generates both the procedure definition block and wires up any calls to it inside existing scripts where appropriate.
+
+<Tip>
+  Scratch AI can search Scratch tutorials — including community creators like Griffpatch — when you want a best-practice implementation. For example:
+
+  ```
+  search how to make a smooth platformer like Griffpatch
+  ```
+
+  The AI retrieves relevant techniques and then builds scripts that reflect them in your project.
+</Tip>

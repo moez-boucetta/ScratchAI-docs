@@ -1,0 +1,73 @@
+---
+title: "Configure Scratch AI Settings and API Keys"
+sidebarTitle: "Settings"
+description: "Open the Scratch AI settings panel to choose an AI model, enter your API key, and customize how the extension behaves in the Scratch editor."
+---
+
+The Settings panel is where you connect Scratch AI to your chosen AI provider. Without a valid model selection and API key, the assistant cannot respond — so this is the first thing to configure when you install the extension. Access Settings at any time by clicking the ⚙️ gear icon in the top-right corner of the Scratch AI panel.
+
+## Opening Settings
+
+<Steps>
+  <Step title="Click the gear icon">
+    In the top-right corner of the Scratch AI panel, click the **⚙️** gear icon. The Settings dialog opens as an overlay on top of the chat.
+  </Step>
+  <Step title="Review the two fields">
+    The dialog contains exactly two fields: **Model** and **API key**. You need to fill in both before Scratch AI can send requests.
+  </Step>
+  <Step title="Save your changes">
+    After selecting a model and entering your API key, click **Save**. The dialog closes and your settings are stored locally in your browser.
+  </Step>
+</Steps>
+
+## Choosing a Model
+
+Click the **Model** dropdown to see every available model grouped by provider. Scroll through the list and click the model you want to use.
+
+Some good starting points:
+
+- **Gemini 3.7 Flash** — fast, capable, and free to start (Google AI Studio free tier)
+- **GPT-5.6** — strong general-purpose model from OpenAI
+- **Claude Sonnet 5** — excellent for complex reasoning and longer projects
+- **DeepSeek V4 Flash** — affordable and surprisingly capable
+
+**Using OpenRouter:** Select **Custom model…** at the bottom of the list. A second field labelled **OpenRouter model ID** appears — type the model identifier you want to use (e.g. `anthropic/claude-sonnet-4`). OpenRouter lets you access hundreds of models with a single API key.
+
+## Entering Your API Key
+
+<Steps>
+  <Step title="Copy your API key from your provider">
+    Log in to your AI provider's dashboard (see the table below) and copy your API key.
+  </Step>
+  <Step title="Paste it into the API key field">
+    Click inside the **API key** field in the Settings dialog and paste the key. The field is masked (password-style) so the key is not visible on screen.
+  </Step>
+  <Step title="Save">
+    Click **Save**. The key is written to your browser's local extension storage — it stays on your device and is sent only to the AI provider's API endpoint when you send a message.
+  </Step>
+</Steps>
+
+<Note>
+  If you switch to a different provider — for example, from Google to OpenAI — you must also update the API key. Each provider issues its own keys, and they are not interchangeable.
+</Note>
+
+## Getting an API Key
+
+Visit the dashboard for your chosen provider to create a free or paid API key:
+
+| Provider | Key dashboard | Free tier |
+|---|---|---|
+| **Google Gemini** | [aistudio.google.com/apikey](https://aistudio.google.com/apikey) | ✅ Yes |
+| **OpenAI** | [platform.openai.com/api-keys](https://platform.openai.com/api-keys) | Limited trial credits |
+| **Anthropic Claude** | [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys) | Limited trial credits |
+| **xAI Grok** | [console.x.ai](https://console.x.ai) | Limited trial credits |
+| **DeepSeek** | [platform.deepseek.com](https://platform.deepseek.com) | Low-cost, no free tier |
+| **OpenRouter** | [openrouter.ai/keys](https://openrouter.ai/keys) | Free credits on sign-up |
+
+<Note>
+  Your API key is stored only in your browser's local extension storage. Scratch AI never collects or transmits your key to any server other than the AI provider you selected.
+</Note>
+
+<Warning>
+  Keep your API key private. Do not share it with others or commit it to a public repository. If you believe a key has been exposed, revoke it immediately from your provider's dashboard and generate a new one.
+</Warning>

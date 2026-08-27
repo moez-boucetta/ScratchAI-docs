@@ -1,0 +1,76 @@
+{
+  "projectType": "frontend",
+  "projectName": "Scratch AI",
+  "projectDescription": "A free, open-source Chrome browser extension that adds an AI chat assistant directly inside the Scratch editor, letting you build and edit Scratch projects using plain natural language.",
+  "theme": "almond",
+  "primaryColor": "#fbad45",
+  "lightColor": "#fcce93",
+  "darkColor": "#24acf4",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "installation",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Using Scratch AI",
+            "pages": [
+              "features/chat-interface",
+              "features/sprites-and-costumes",
+              "features/scripts-and-blocks",
+              "features/variables-and-lists",
+              "features/project-management"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration/settings",
+              "configuration/ai-models"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "help/faq",
+              "help/troubleshooting"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "AI-powered chat assistant embedded directly in the Scratch editor",
+    "Add, delete, and rename sprites from a natural-language prompt",
+    "Edit block scripts — motion, logic, events, sensing, variables, and more",
+    "Draw custom costumes and backdrops as SVG art",
+    "Generate a complete playable Scratch project from a single prompt",
+    "Attach images or focus on a specific sprite to guide AI edits",
+    "Green-flag test: runs the built scripts and reports whether they work",
+    "Export the finished project as a .sb3 file",
+    "Web-search Scratch tutorials (e.g. Griffpatch) for best practices",
+    "Supports OpenAI, Anthropic, Google Gemini, xAI, DeepSeek, Qwen, Moonshot, Meta Llama, Z.AI, and OpenRouter",
+    "Undo the last AI action",
+    "New Chat button to reset the conversation",
+    "Free and open-source (MIT license)"
+  ],
+  "publicApiSurface": [
+    "Chat input — natural-language prompt sent to the AI",
+    "Sprite selector — focus the AI on a specific sprite",
+    "Attach file — send an image to the AI for reference",
+    "Build button — execute an AI-generated action plan",
+    "New Chat button — start a fresh conversation",
+    "Settings (gear icon) — choose AI model and enter API key",
+    "Undo — revert the last AI action",
+    "Export Project — download the current project as a .sb3 file",
+    "Green-flag test — runs scripts and reports results"
+  ]
+}

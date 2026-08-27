@@ -1,47 +1,101 @@
 ---
-title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+title: "Get Started with Scratch AI: Build Your First Project"
+sidebarTitle: "Quick Start"
+description: "Learn how to set up your API key, send your first prompt, and build a working Scratch game with Scratch AI in under 5 minutes."
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
+Once Scratch AI is installed, the only thing standing between you and your first AI-built Scratch project is a model selection and an API key. This guide walks you through the entire setup — from opening the panel for the first time to watching your project come to life — in five minutes or less.
 
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
+<Info>
+  **Prerequisites:**
+  - Scratch AI installed in Chrome — see the [Installation guide](/installation) if you haven't done this yet.
+  - An API key from one of the supported AI providers. If you want a free option, grab a Google Gemini key from [Google AI Studio](https://aistudio.google.com) at no cost. See [AI Models](/configuration/ai-models) for a full list of providers.
+</Info>
 
-## Prerequisites
-
-Before you begin, you must have:
-
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
+## Steps
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
-
-    ```bash
-    npm install your-package
-    ```
+  <Step title="Open a Scratch project">
+    Navigate to [scratch.mit.edu](https://scratch.mit.edu) and open any project in the editor. The URL should look like `scratch.mit.edu/projects/123456789/editor`. You can use an existing project or create a brand-new empty one — Scratch AI works equally well with both. Once the editor loads, click the **Scratch AI** tab in the top toolbar to open the AI chat panel.
   </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
-
-    ```bash
-    your-cli init
-    ```
+  <Step title="Open Settings">
+    In the top-right corner of the Scratch AI panel, click the **⚙️ gear icon**. The Settings dialog opens. This is where you connect Scratch AI to your chosen AI model and provide your API key.
   </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
+  <Step title="Choose a model">
+    In the Settings dialog, open the **Model** dropdown and select the AI model you want to use. A few popular choices:
 
-    ```bash
-    your-cli start
+    - **Gemini 1.5 Flash** (Google) — fast, capable, and available on a generous free tier via [Google AI Studio](https://aistudio.google.com)
+    - **GPT-4o** (OpenAI) — very strong at following complex multi-step instructions
+    - **Claude 3.5 Sonnet** (Anthropic) — excellent at creative and nuanced tasks
+
+    If you're unsure, start with **Gemini 1.5 Flash** — it requires only a free Google account to get an API key and has no upfront cost.
+  </Step>
+  <Step title="Enter your API key">
+    Paste your API key into the **API key** field in the Settings dialog. Your key is saved locally in your browser's storage and is sent directly to the AI provider — it never passes through any Scratch AI server. Click **Save** to confirm. The Settings dialog closes.
+  </Step>
+  <Step title="Send your first prompt">
+    In the chat input at the bottom of the Scratch AI panel, type a plain-language description of what you want. For example:
+
     ```
+    add a cat sprite that moves left and right with the arrow keys
+    ```
+
+    Press **Enter** or click the **→** send button to submit your prompt.
+  </Step>
+  <Step title="Watch Scratch AI build">
+    The panel displays a **"thinking…"** indicator while the AI model processes your request. In a few seconds, Scratch AI executes the resulting actions directly on your live project — you will see the new sprite appear in the Scratch sprite panel and its scripts added to the code area, all without leaving the chat. The AI also summarises what it did in the chat, so you always know exactly what changed.
+  </Step>
+  <Step title="Test your project">
+    Click the **green flag** above the Scratch stage to run your project. Your sprite should respond to the arrow keys immediately. If something isn't right, describe the fix in the chat — for example, `make the cat move faster` or `the sprite is moving in the wrong direction, please fix it` — and Scratch AI will update the scripts for you.
   </Step>
 </Steps>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+## Example Prompts to Try
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
+<Tip>
+  These prompts are great starting points — copy them directly into the chat or use them as inspiration for your own ideas:
+
+  - `create a simple platformer game with a player and platforms`
+  - `add a score variable that increases when the player touches a star`
+  - `draw a spaceship costume for Sprite1`
+  - `make the player jump when I press the space bar`
+  - `add a backdrop of a city skyline and play a sound effect when the game starts`
+  - `create a quiz game with three questions and a final score screen`
 </Tip>
+
+You can keep the conversation going just like a regular chat. Each follow-up prompt builds on the current state of your project, so you can iterate quickly — add features, fix bugs, and tweak visuals all in plain language.
+
+## Next Steps
+
+Now that your project is up and running, explore the rest of the Scratch AI documentation to get the most out of every feature:
+
+<CardGroup cols={2}>
+  <Card
+    title="Chat Interface"
+    icon="message"
+    href="/features/chat-interface"
+  >
+    Learn how to attach images, reference specific sprites, export your project, and make the most of the chat panel.
+  </Card>
+  <Card
+    title="Sprites & Costumes"
+    icon="paintbrush"
+    href="/features/sprites-and-costumes"
+  >
+    Discover how Scratch AI adds, removes, and draws SVG costumes and backdrops for your project.
+  </Card>
+  <Card
+    title="Scripts & Blocks"
+    icon="code"
+    href="/features/scripts-and-blocks"
+  >
+    Understand how Scratch AI writes and edits block scripts, including loops, variables, clones, and My Blocks.
+  </Card>
+  <Card
+    title="AI Models"
+    icon="robot"
+    href="/configuration/ai-models"
+  >
+    Browse the full list of supported AI providers, compare model capabilities, and learn how to switch models at any time.
+  </Card>
+</CardGroup>

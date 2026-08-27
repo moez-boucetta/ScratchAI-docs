@@ -1,0 +1,130 @@
+---
+title: "Manage Sprites and Costumes with Scratch AI"
+sidebarTitle: "Sprites & Costumes"
+description: "Add, delete, rename sprites, switch costumes, and draw SVG costumes and backdrops using natural-language prompts in Scratch AI."
+---
+
+Scratch AI gives you full control over every sprite and costume in your project — entirely from the chat panel. You can add brand-new sprites, remove ones you no longer need, rename them, switch their active costume, and even have the AI draw completely custom SVG artwork for costumes and backdrops. No manual clicking through menus required.
+
+## Adding a Sprite
+
+Ask Scratch AI to create a sprite and it will add it to your project immediately. You can specify as much or as little detail as you like:
+
+```
+add a red ball sprite at position 0, 0
+```
+```
+create a spaceship sprite
+```
+```
+add a sprite called Enemy at x=-150, y=100 with size 80
+```
+
+Scratch AI resolves the name, initial position, size, and direction from your description. If you leave any property out, sensible defaults are applied automatically.
+
+## Deleting a Sprite
+
+Remove a sprite you no longer need:
+
+```
+delete the Enemy sprite
+```
+
+<Warning>
+  Deleting a sprite also removes all of its scripts, costumes, and sounds. This action can be undone with a follow-up `undo` prompt if you change your mind.
+</Warning>
+
+## Renaming a Sprite
+
+Give a sprite a clearer name to make future prompts easier:
+
+```
+rename Sprite1 to Player
+```
+
+After renaming, you can refer to the sprite by its new name in all subsequent prompts.
+
+## Drawing Custom Costumes (SVG)
+
+Scratch AI can generate vector (SVG) artwork on the fly and attach it as a costume or backdrop. Describe the visual result you want:
+
+```
+draw a red heart costume for Player
+```
+```
+add a castle backdrop
+```
+```
+draw a spaceship costume named ship1 for the Player sprite
+```
+
+The generated SVG is added directly to the sprite's costume list, ready to use immediately.
+
+<Note>
+  For best results with custom artwork prompts, be specific about colours, shapes, and style. For example, add phrases like *"pixel art style"*, *"simple flat design"*, or *"dark outline with bright fill"* to guide the AI's drawing choices.
+</Note>
+
+## Switching Costumes
+
+Tell Scratch AI to make a specific costume the active one:
+
+```
+switch Player to the costume named jump
+```
+
+This is the same as clicking a costume in the Costumes tab — but you can do it for any sprite without having to navigate away from the Code tab.
+
+## Adding Text Costumes
+
+Create a costume that displays text — great for score displays, labels, and UI elements:
+
+```
+add a text costume saying "Score: 0" with blue text
+```
+
+You can also specify a background colour and font size:
+
+```
+add a text costume to Player saying "GAME OVER" with white text on a red background at size 48
+```
+
+## Copying a Costume
+
+Reuse a costume from one sprite on another to keep your artwork consistent:
+
+```
+copy the run costume from Player to Enemy
+```
+
+Scratch AI reads the costume from the source sprite and adds an identical copy to the target sprite's costume list.
+
+## Sprite Properties
+
+Scratch AI can read and write all standard sprite properties. Use natural language to set position, size, direction, and visibility:
+
+<CardGroup cols={2}>
+  <Card title="Position" icon="arrows-up-down-left-right" href="/features/sprites-and-costumes">
+    ```
+    move Player to position x=50, y=-100
+    ```
+    Sets the sprite's x and y coordinates on the stage.
+  </Card>
+  <Card title="Size" icon="up-right-and-down-left-from-center" href="/features/sprites-and-costumes">
+    ```
+    set the size of Enemy to 60%
+    ```
+    Scales the sprite relative to its original costume dimensions.
+  </Card>
+  <Card title="Direction" icon="rotate" href="/features/sprites-and-costumes">
+    ```
+    point Player in direction 90
+    ```
+    Rotates the sprite to face a specific angle (0° = up, 90° = right).
+  </Card>
+  <Card title="Visibility" icon="eye-slash" href="/features/sprites-and-costumes">
+    ```
+    hide the HUD sprite
+    ```
+    Shows or hides a sprite without deleting it.
+  </Card>
+</CardGroup>
