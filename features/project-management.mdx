@@ -1,5 +1,5 @@
 ---
-title: "Generate and Export Scratch Projects with AI"
+title: "Scratch AI: Build, Name, and Export Scratch Projects"
 sidebarTitle: "Project Management"
 description: "Use Scratch AI to generate complete playable Scratch projects from a single prompt, rename your project, and export it as an .sb3 file."
 ---
@@ -59,6 +59,16 @@ Scratch AI triggers the `exportProject` action, which downloads a `.sb3` file to
 - **scratch.mit.edu** — you can upload it directly to your Scratch account and share it with the community
 - Any other tool that opens standard Scratch 3 project files
 
+## Green-Flag Testing
+
+Every time Scratch AI builds or modifies scripts, it automatically runs a green-flag test and reports the result in the chat. You'll see output like:
+
+```
+⚑ Flag test on "Player": 2 thread(s) started, position 0,0 → 0,0 — WORKING ✓ (key-controlled)
+```
+
+The report shows the thread count, position change, working status, and whether the script is key-controlled. If anything isn't working, Scratch AI will attempt an automatic repair and show you the updated result.
+
 ## Iterating on a Project
 
 The initial generation is just a starting point. Keep chatting to refine and extend your project:
@@ -78,7 +88,7 @@ add a sound effect when the player scores a point
 
 Each follow-up prompt builds on the current state of your project. Scratch AI reads what's already there and applies only the changes you describe, leaving the rest intact.
 
-When you want to start an entirely different project or give the AI a clean context, click **+ New chat** in the top-right of the chat panel to clear the conversation history.
+When you want to start an entirely different project or give the AI a clean context, click **New chat** in the chat panel to clear the conversation history.
 
 <Tip>
   For complex projects, start with a high-level prompt and then refine step by step. For example, first ask for a basic platformer, then ask to add enemies, then ask to add a score system. Scratch AI handles one coherent set of changes at a time and is more accurate when each prompt has a focused goal.

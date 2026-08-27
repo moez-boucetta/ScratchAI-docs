@@ -1,5 +1,5 @@
 ---
-title: "Edit Block Scripts with Scratch AI"
+title: "Scratch AI: Build and Edit Block Scripts by Prompt"
 sidebarTitle: "Scripts & Blocks"
 description: "Use Scratch AI to add, replace, or delete Scratch block scripts on any sprite using natural language — from simple movement to complex game logic."
 ---
@@ -33,7 +33,7 @@ Swap out an existing script with a new implementation without losing the sprite 
 replace the movement script on Player with one that uses WASD keys
 ```
 
-Scratch AI identifies the matching script by its behaviour and replaces it in place.
+Scratch AI identifies the matching script by its behaviour and replaces it in place using the `replaceScript` action.
 
 ## Deleting Scripts
 
@@ -46,7 +46,27 @@ delete all scripts on Enemy
 delete script 2 on Player
 ```
 
-Use `deleteAllScripts` when you want to wipe a sprite's entire script list and start over from scratch.
+Use `deleteAllScripts` phrasing when you want to wipe a sprite's entire script list and start fresh:
+
+```
+clear all scripts on Bullet
+```
+
+## Custom Blocks (My Blocks)
+
+Define reusable procedures to keep your scripts clean and modular. Scratch AI uses the `defineBlock` action to create the procedure definition and can also insert `callBlock` calls into other scripts automatically:
+
+```
+define a custom block called jump with a height argument
+```
+```
+create a custom block named spawnEnemy that takes a speed argument
+```
+```
+call the jump block on Player with height 10
+```
+
+Scratch AI generates both the procedure definition block and wires up any calls to it inside existing scripts where appropriate.
 
 ## Supported Block Categories
 
@@ -68,40 +88,42 @@ Scratch AI supports the full range of Scratch blocks across every built-in and e
 
 ## Green-Flag Testing
 
-After Scratch AI builds or modifies scripts, it automatically runs a green-flag test and reports the results in the chat. You'll see feedback such as:
+After Scratch AI builds or modifies scripts, it automatically runs a green-flag test and reports the results in the chat. You'll see output similar to:
 
 ```
-✓ done — Flag test on "Player": 1 thread(s) started, position 0,0 → 0,0 — WORKING ✓ (key-controlled)
+⚑ Flag test on "Player": 1 thread(s) started, position 0,0 → 0,0 — WORKING ✓ (key-controlled)
+   · thread: event_whenflagclicked (running)
 ```
 
 The test report tells you:
 
-- How many script threads started when the flag was clicked
-- Whether the sprite moved or changed position
-- Whether any costumes or variables changed
-- Whether the script is key-controlled (meaning it responds to key input rather than triggering immediately)
-- Any runtime errors encountered
+- **Thread count** — how many script threads started when the flag was clicked
+- **Position change** — the sprite's starting position vs. final position after the test
+- **Working status** — `WORKING ✓` or `NOT working ✕`
+- **Costume / variable changes** — whether any costumes or variables were modified during the test
+- **Key-controlled flag** — if the script waits for key input rather than triggering immediately
+- **Per-thread detail** — the hat block opcode and status word for each running thread
+- **Runtime errors** — any error thrown during the green-flag run
 
-If a test shows a script is not working as expected, you can ask Scratch AI to diagnose and fix it in the very next message.
+If the test shows a script is not working as expected, you can ask Scratch AI to diagnose and fix it in the very next message.
 
-## Custom Blocks (My Blocks)
+<Note>
+  A `NOT working ✕` result with zero threads usually means the script has no `when green flag clicked` hat block — Scratch AI will automatically detect this and attempt a repair before reporting back.
+</Note>
 
-Define reusable procedures to keep your scripts clean and modular:
+## Web Search for Scratch Techniques
 
-```
-define a custom block called jump with a height argument
-```
-```
-create a custom block named spawnEnemy that takes a speed argument
-```
-
-Scratch AI generates both the procedure definition block and wires up any calls to it inside existing scripts where appropriate.
+Scratch AI can search the web for Scratch tutorials and community resources when you want a best-practice implementation. This uses the built-in `webSearch` action to retrieve relevant techniques before building your scripts:
 
 <Tip>
-  Scratch AI can search Scratch tutorials — including community creators like Griffpatch — when you want a best-practice implementation. For example:
+  Ask Scratch AI to look up techniques from the Scratch community, including well-known creators like Griffpatch:
 
   ```
   search how to make a smooth platformer like Griffpatch
+  ```
+
+  ```
+  look up how to make a gravity system in Scratch
   ```
 
   The AI retrieves relevant techniques and then builds scripts that reflect them in your project.

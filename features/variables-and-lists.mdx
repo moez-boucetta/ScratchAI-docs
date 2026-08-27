@@ -1,5 +1,5 @@
 ---
-title: "Manage Variables and Lists with Scratch AI"
+title: "Scratch AI: Create, Set, and Delete Variables and Lists"
 sidebarTitle: "Variables & Lists"
 description: "Create, set, delete, and manage Scratch variables and lists across your project using simple natural-language prompts in Scratch AI."
 ---
@@ -12,6 +12,8 @@ Variables store single values — numbers, text, or booleans — that your scrip
 
 ### Creating a Variable
 
+Scratch AI uses the `createVariable` action to add a new variable to your project:
+
 ```
 create a variable called score
 ```
@@ -23,6 +25,8 @@ You can create global variables (available to all sprites) or sprite-local varia
 
 ### Setting a Variable's Value
 
+Use the `setVariable` action to assign a value to an existing variable:
+
 ```
 set the score variable to 0
 ```
@@ -31,6 +35,8 @@ set lives to 5
 ```
 
 ### Deleting a Variable
+
+Remove a variable you no longer need with the `deleteVariable` action:
 
 ```
 delete the score variable
@@ -53,11 +59,15 @@ Lists store ordered collections of items — perfect for inventories, leaderboar
 
 ### Creating a List
 
+Scratch AI uses the `createList` action to add a new list to your project:
+
 ```
 create a list called inventory
 ```
 
 ### Adding Items
+
+Use the `addToList` action to append items to a list:
 
 ```
 add "sword" to the inventory list
@@ -67,6 +77,8 @@ add "shield" to the inventory list
 ```
 
 ### Deleting a List
+
+Remove a list and all of its contents with the `deleteList` action:
 
 ```
 delete the inventory list

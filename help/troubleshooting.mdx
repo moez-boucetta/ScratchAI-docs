@@ -1,5 +1,5 @@
 ---
-title: "Troubleshoot Scratch AI: Fix Common Issues"
+title: "Scratch AI Troubleshooting Guide: Fix Common Errors"
 sidebarTitle: "Troubleshooting"
 description: "Step-by-step fixes for the most common Scratch AI problems — missing tab, API errors, empty responses, rate limits, and model not found errors."
 ---
@@ -10,14 +10,14 @@ If Scratch AI isn't working as expected, this page covers the most common issues
 
 ## The Scratch AI Tab Doesn't Appear
 
-The extension only injects itself on Scratch project editor pages. If the Scratch AI panel is missing, the most likely cause is that the extension is either not active on the current URL or needs to be reloaded.
+The extension only activates on Scratch project editor pages. If the Scratch AI panel is missing, the most likely cause is that the extension is either not active on the current URL or needs to be reloaded.
 
 <Steps>
   <Step title="Check the URL">
     Make sure your browser tab is on a URL that matches `scratch.mit.edu/projects/<id>/editor`. The extension does **not** activate on the Scratch homepage, your profile page, or a project's public view page — you must be inside the editor itself.
   </Step>
   <Step title="Refresh the page">
-    Press **Ctrl+R** (Windows/Linux) or **Cmd+R** (macOS) to reload the tab. This re-triggers content script injection and is often all that's needed after installing or updating the extension.
+    Press **Ctrl+R** (Windows/Linux) or **Cmd+R** (macOS) to reload the tab. This re-triggers the extension and is often all that's needed after installing or updating it.
   </Step>
   <Step title="Reload the extension">
     Navigate to `chrome://extensions` in your browser's address bar. Find **Scratch AI** in the list and click the reload **↻** icon beneath it. Then return to your Scratch project and refresh the tab.
@@ -26,6 +26,21 @@ The extension only injects itself on Scratch project editor pages. If the Scratc
     On the `chrome://extensions` page, confirm that **Developer Mode** (top-right toggle) is turned on and that the Scratch AI extension toggle is enabled. If the extension shows an error badge, click **Details** to read the error message and resolve it before reloading.
   </Step>
 </Steps>
+
+---
+
+## "No API key yet. Click the gear icon (top-right) and add one in Settings."
+
+You haven't entered an API key, so Scratch AI cannot contact any AI provider.
+
+1. Click the **⚙️ Settings** (gear) icon in the Scratch AI panel.
+2. Select your AI provider from the dropdown.
+3. Paste your API key into the **API Key** field.
+4. Click **Save**.
+
+<Tip>
+  Need an API key? Visit your chosen provider's developer dashboard — for example, [Google AI Studio](https://aistudio.google.com) for Gemini keys or [platform.openai.com](https://platform.openai.com) for OpenAI keys — and generate a new key there.
+</Tip>
 
 ---
 
@@ -43,7 +58,7 @@ You haven't chosen an AI model yet, so Scratch AI has nothing to send your promp
 
 ---
 
-## "API request timed out (120s)."
+## "API request timed out (120s). The model may be too slow — try a faster model."
 
 The model took longer than 120 seconds to respond. This usually means the selected model is under heavy load or is too large to respond quickly enough for interactive use.
 
@@ -57,7 +72,17 @@ The model took longer than 120 seconds to respond. This usually means the select
 
 ---
 
-## "Rate limited (429)."
+## "Could not reach the … API (network error or the request was blocked)."
+
+Scratch AI was unable to connect to the AI provider at all. This is a network-level failure rather than an API error.
+
+- **Check your internet connection.** Make sure your device is online and can reach external services.
+- **Disable browser extensions that block requests.** Ad blockers or privacy extensions may intercept outbound API calls. Try temporarily disabling them and sending your prompt again.
+- **Check for firewall or proxy restrictions.** Corporate or school networks sometimes block third-party API endpoints. If so, try a different network or contact your network administrator.
+
+---
+
+## "Rate limited (429). Free models have tight quotas — wait a minute or try another model."
 
 You've sent too many requests in a short period and the provider has temporarily blocked further calls from your API key. Free-tier keys have strict per-minute and per-day quotas.
 
@@ -68,11 +93,11 @@ You've sent too many requests in a short period and the provider has temporarily
 
 ---
 
-## "Model not found (404)."
+## "Model not found (404). Pick a valid Google model in Settings — e.g. \"Gemini 3.7 Flash\" or \"Gemini 3 Flash Preview\"."
 
 The model ID Scratch AI sent to the API doesn't match any model the provider recognises. This error is most common with Google Gemini models when a model name is entered manually and doesn't match the exact identifier Google expects.
 
-- In **⚙️ Settings**, select a model from the dropdown rather than typing a name manually. Valid choices include **"Gemini 1.5 Flash"** and **"Gemini 2.0 Flash"**.
+- In **⚙️ Settings**, select a model from the dropdown rather than typing a name manually. Valid choices include **"Gemini 3.7 Flash"** and **"Gemini 3 Flash Preview"**.
 - If you are using a custom model name via the OpenRouter or Google provider, verify the exact model ID in [Google AI Studio](https://aistudio.google.com) or the [OpenRouter model list](https://openrouter.ai/models) — even a small typo will trigger this error.
 
 ---
@@ -87,7 +112,7 @@ The AI accepted your request and ran, but produced no output. This is usually a 
 
 ---
 
-## "Enter your OpenRouter model ID in Settings."
+## "Enter your OpenRouter model ID in Settings (e.g. anthropic/claude-sonnet-4)."
 
 You selected **OpenRouter** as your provider but left the custom model field empty. OpenRouter requires you to specify which underlying model to use.
 
@@ -102,7 +127,7 @@ You selected **OpenRouter** as your provider but left the custom model field emp
 
 ## Scratch AI Made Unexpected Changes
 
-If the AI modified something you didn't intend, you have several recovery options:
+If the AI modified something you didn't intend — for example, edited the wrong sprite, deleted a script, or changed costumes you wanted to keep — you have several recovery options:
 
 1. Use the **Undo** button in the Scratch AI chat panel to revert the most recent set of AI actions.
 2. Press **Ctrl+Z** (Windows/Linux) or **Cmd+Z** (macOS) in the Scratch editor to step back through individual block-level changes.

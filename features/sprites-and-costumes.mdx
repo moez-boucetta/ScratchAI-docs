@@ -1,10 +1,10 @@
 ---
-title: "Manage Sprites and Costumes with Scratch AI"
+title: "Scratch AI: Add, Delete, and Edit Sprites and Costumes"
 sidebarTitle: "Sprites & Costumes"
-description: "Add, delete, rename sprites, switch costumes, and draw SVG costumes and backdrops using natural-language prompts in Scratch AI."
+description: "Add, delete, and rename sprites, switch costumes and backdrops, and draw custom SVG artwork using natural-language prompts in Scratch AI."
 ---
 
-Scratch AI gives you full control over every sprite and costume in your project — entirely from the chat panel. You can add brand-new sprites, remove ones you no longer need, rename them, switch their active costume, and even have the AI draw completely custom SVG artwork for costumes and backdrops. No manual clicking through menus required.
+Scratch AI gives you full control over every sprite and costume in your project — entirely from the chat panel. You can add brand-new sprites, remove ones you no longer need, rename them, switch their active costume or the stage backdrop, and even have the AI draw completely custom SVG artwork for costumes and backdrops. No manual clicking through menus required.
 
 ## Adding a Sprite
 
@@ -31,7 +31,7 @@ delete the Enemy sprite
 ```
 
 <Warning>
-  Deleting a sprite also removes all of its scripts, costumes, and sounds. This action can be undone with a follow-up `undo` prompt if you change your mind.
+  Deleting a sprite also removes all of its scripts, costumes, and sounds. This action can be undone with a follow-up `/undo` prompt if you change your mind.
 </Warning>
 
 ## Renaming a Sprite
@@ -46,13 +46,10 @@ After renaming, you can refer to the sprite by its new name in all subsequent pr
 
 ## Drawing Custom Costumes (SVG)
 
-Scratch AI can generate vector (SVG) artwork on the fly and attach it as a costume or backdrop. Describe the visual result you want:
+Scratch AI can generate vector (SVG) artwork on the fly and attach it as a costume. Describe the visual result you want:
 
 ```
 draw a red heart costume for Player
-```
-```
-add a castle backdrop
 ```
 ```
 draw a spaceship costume named ship1 for the Player sprite
@@ -73,6 +70,32 @@ switch Player to the costume named jump
 ```
 
 This is the same as clicking a costume in the Costumes tab — but you can do it for any sprite without having to navigate away from the Code tab.
+
+## Drawing Custom Backdrops (SVG)
+
+Scratch AI can also draw new SVG backdrops for the stage:
+
+```
+add a castle backdrop
+```
+```
+draw a night-sky backdrop with stars and a moon
+```
+
+The generated backdrop is added to the Stage's backdrop list and set as the active backdrop automatically.
+
+## Switching Backdrops
+
+Switch the stage to an existing backdrop by name:
+
+```
+switch the backdrop to Blue Sky
+```
+```
+switch backdrop to backdrop2
+```
+
+This activates a backdrop that is already in your project's backdrop list without drawing a new one.
 
 ## Adding Text Costumes
 
